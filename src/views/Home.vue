@@ -9,9 +9,17 @@
 
           <div class="card-body bg-pokebola bg-normal">
             <div class="pokemon">
-              <transition>
+              <transition name="slide">
                 <img src="@/assets/imgs/pokemons/001.png" v-if="exibir">
               </transition>
+              <div class="evolucoes">
+                <transition name="fade">
+                <img src="@/assets/imgs/pokemons/003.png" v-if="exibir">
+              </transition>
+              <transition name="fade">
+                <img src="@/assets/imgs/pokemons/002.png" v-if="exibir">
+              </transition>
+              </div>
             </div>
           </div>
 
@@ -90,26 +98,53 @@ body {
 </style>
 
 <style scoped>
-.v-enter-from {
+.fade-enter-from {
   opacity: 0;
 }
 
-.v-enter-active {
+.fade-enter-active {
   transition: opacity 1s;;
 }
 
-.v-enter-to{
+.fade-enter-to{
   opacity: 1;
 }
-.v-leave-from {
+.fade-leave-from {
   opacity: 1;
 }
 
-.v-leave-active {
+.fade-leave-active {
   transition: opacity 0.3s;;
 }
 
-.v-leave-to{
+.fade-leave-to{
+  opacity: 0;
+}
+
+.slide-enter-from {
+  transform: translateX(-150px);
+  opacity: 0;
+}
+
+.slide-enter-active {
+  transition: all 1s;;
+}
+
+.slide-enter-to{
+  transform: translateX(0px);
+  opacity: 1;
+}
+.slide-leave-from {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.slide-leave-active {
+  transition: all 0.3s;;
+}
+
+.slide-leave-to{
+  transform: translate(100px);
   opacity: 0;
 }
 
@@ -211,4 +246,17 @@ body {
   margin: 20px 30px 20px 30px;
 }
 
+.evolucoes {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  height: 70px;
+}
+
+.evolucoes img {
+  cursor: pointer;
+  max-width: 100%;
+  max-height: 100%;
+  float: right;
+}
 </style>
