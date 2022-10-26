@@ -13,10 +13,17 @@
                 <img src="@/assets/imgs/pokemons/001.png" v-if="exibir">
               </transition>
               <div class="evolucoes">
+<<<<<<< Updated upstream
                 <transition name="fade">
                 <img src="@/assets/imgs/pokemons/003.png" v-if="exibir">
               </transition>
               <transition name="fade">
+=======
+                <transition>
+                <img src="@/assets/imgs/pokemons/003.png" v-if="exibir">
+              </transition>
+              <transition>
+>>>>>>> Stashed changes
                 <img src="@/assets/imgs/pokemons/002.png" v-if="exibir">
               </transition>
               </div>
@@ -98,7 +105,11 @@ body {
 </style>
 
 <style scoped>
+<<<<<<< Updated upstream
 .fade-enter-from {
+=======
+/* .v-enter-from {
+>>>>>>> Stashed changes
   opacity: 0;
 }
 
@@ -146,8 +157,34 @@ body {
 .slide-leave-to{
   transform: translate(100px);
   opacity: 0;
+} */
+
+.v-enter-from {
+  opacity: 0;
+  transform: translateX(-150px);
 }
 
+.v-enter-active {
+  transition: all 1s;;
+}
+
+.v-enter-to{
+  opacity: 1;
+  transform: translateX(0px);
+}
+.v-leave-from {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.v-leave-active {
+  transition: all 0.3s;;
+}
+
+.v-leave-to{
+  opacity: 0;
+  transform: translateX(150px);
+}
 .pokedex {
   padding: 20px;
   background-color: #ffffff;
@@ -248,7 +285,11 @@ body {
 
 .evolucoes {
   position: absolute;
+<<<<<<< Updated upstream
   top: 20px;
+=======
+  top: 0px;
+>>>>>>> Stashed changes
   right: 0px;
   height: 70px;
 }
@@ -259,4 +300,8 @@ body {
   max-height: 100%;
   float: right;
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 </style>
